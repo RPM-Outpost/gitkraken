@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=@version
+Type=Application
+Name=GitKraken
+Icon=/opt/gitkraken/@icon
+Exec=/opt/gitkraken/@exe
+Comment=Unleash your repo
+Categories=Development;RevisionControl;
+Terminal=false
+StartupWMClass=GitKraken
