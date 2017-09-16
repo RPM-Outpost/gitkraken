@@ -3,7 +3,7 @@ A script to create an RPM package of Gitkraken.
 
 ## How to use
 1. Run the [create-package.sh](https://github.com/RPM-Outpost/gitkraken/blob/master/create-package.sh) script from the command line. It will download the latest version of Gitkraken and build an RPM package. You must specify the version of gitkraken, for instance: `./create-package.sh 3.0`
-2. Then, install the package with `sudo dnf install <rpm file>`.
+2. Then, install the package with `sudo dnf install <rpm file>`. The script can also install the package for you.
 
 ### Requirements
 You need to install the `rpmdevtools` package to build RPM packages and use the script.
