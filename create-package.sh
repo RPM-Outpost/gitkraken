@@ -85,14 +85,4 @@ disp "The RPM package is located in the \"RPMs/$arch\" folder."
 disp '----------------'
 
 ask_remove_dir "$work_dir"
-
-ask_yesno 'Install the package now?'
-case "$answer" in
-	y|Y)
-		cd "$rpm_dir/$arch"
-		rpm_filename=$(find -maxdepth 1 -type f -name '*.rpm' -printf '%P\n' -quit)
-		sudo dnf install "$rpm_dir/$arch/$rpm_filename"
-		;;
-	*)
-		echo 'Package not installed.'
-esac
+ask_installpkg

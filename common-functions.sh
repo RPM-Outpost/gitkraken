@@ -35,6 +35,30 @@ manage_dir() {
 	mkdir -p "$1"
 }
 
+# ask_installpkg
+## Asks the user if they want to install the newly created package.
+ask_installpkg() {
+	if [[ $# -eq 2 && $2 == "all" ]]; then
+		p_str='packages'
+	else
+		p_str='package'
+	fi
+	ask_yesno "Install the $p_str now?"
+	case "$answer" in
+		y|Y)
+			cd "$rpm_dir/$arch"
+			if [[ $# -eq 2 && $2 == "all" ]]; then
+				rpm_filename=$(find -maxdepth 1 -type f -name '*.rpm' -printf '%P\n' -quit)
+			else
+				rpm_filename=$(find -type f -name '*.rpm' -printf '%P\n')
+			fi
+			sudo dnf install "$rpm_dir/$arch/$rpm_filename"
+			;;
+		*)
+			echo 'Package not installed.'
+	esac
+}
+
 # extract archive_file destination [options]
 extract() {
 	echo "Extracting \"$1\"..."
@@ -54,7 +78,7 @@ extract() {
 	fi
 	if [ $# -eq 3 ]; then
 		eval $command $3 # Custom options
-	elif [ s# -eq 4 ]; then
+	elif [ $# -eq 4 ]; then
 		eval $command $3 $4 # Custom options
 	else
 		eval $command
