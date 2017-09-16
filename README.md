@@ -25,3 +25,7 @@ Then install the updated package with `sudo dnf install <rpm file>`.
 - Fedora 26
 
 It probably work on other RPM-based distros but I haven't tested it. Let me know if it works for you!
+
+## Screenshots
+![beautiful screenshot](screenshot1.png)
+![screenshot when gitkraken has already been downloaded](screenshot2.png)
