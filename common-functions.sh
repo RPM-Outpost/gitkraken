@@ -38,24 +38,28 @@ manage_dir() {
 # ask_installpkg
 ## Asks the user if they want to install the newly created package.
 ask_installpkg() {
-	if [[ $# -eq 2 && $2 == "all" ]]; then
-		p_str='packages'
+	if [[ $1 == "all" || $2 == "all" ]]; then
+		pl='es'
 	else
-		p_str='package'
+		pl='e'
 	fi
-	ask_yesno "Install the $p_str now?"
+	ask_yesno "Install the packag$pl now?"
 	case "$answer" in
 		y|Y)
 			cd "$rpm_dir/$arch"
-			if [[ $# -eq 2 && $2 == "all" ]]; then
-				rpm_filename=$(find -maxdepth 1 -type f -name '*.rpm' -printf '%P\n' -quit)
-			else
+			if [[ $1 == "all" || $2 == "all" ]]; then
 				rpm_filename=$(find -type f -name '*.rpm' -printf '%P\n')
+			else
+				rpm_filename=$(find -maxdepth 1 -type f -name '*.rpm' -printf '%P\n' -quit)
 			fi
-			sudo dnf install "$rpm_dir/$arch/$rpm_filename"
+			if [[ $1 == "allowerasing" || $2 == "allowerasing" ]]; then
+				sudo dnf install --allowerasing $rpm_filename
+			else
+				sudo dnf install "$rpm_filename"
+			fi
 			;;
 		*)
-			echo 'Package not installed.'
+			echo "Packag$pl not installed."
 	esac
 }
 
