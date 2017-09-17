@@ -4,7 +4,7 @@
 Name:		gitkraken
 Version:	%{version_number}
 Release:	0%{?dist}
-Summary:	Free Voice and Text Chat for Gamers.
+Summary:	Modern GUI for git
 
 Group:		Applications/Internet
 License:	Proprietary
@@ -13,8 +13,7 @@ BuildArch:	x86_64
 Requires:   glibc, git
 
 %description
-All-in-one voice and text chat for gamers that’s free, secure, and works on both your desktop and phone. 
-It’s time to ditch Skype and TeamSpeak.
+Unleash your repo!
 
 %prep
 
