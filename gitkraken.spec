@@ -10,7 +10,7 @@ Group:		Applications/Internet
 License:	Proprietary
 URL:		https://gitkraken.com/
 BuildArch:	x86_64
-Requires:   glibc, git
+Requires:   glibc, git, libcurl
 
 %description
 Unleash your repo!
@@ -31,3 +31,7 @@ chmod +x "%{buildroot}%{install_dir}/%{exec_name}"
 %{install_dir}
 %{apps_dir}/*
 
+%post
+# Fix gitkraken error caused by missing library libcurl-gnutls.so.4
+cd /usr/lib64
+ln -s libcurl.so.4 libcurl-gnutls.so.4
