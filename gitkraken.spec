@@ -34,4 +34,4 @@ chmod +x "%{buildroot}%{install_dir}/%{exec_name}"
 %post
 # Fix gitkraken error caused by missing library libcurl-gnutls.so.4
 cd /usr/lib64
-ln -s libcurl.so.4 libcurl-gnutls.so.4
+ln -s -f libcurl.so.4 libcurl-gnutls.so.4
