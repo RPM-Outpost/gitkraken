@@ -1,9 +1,10 @@
 %define install_dir /opt/gitkraken
 %define apps_dir /usr/share/applications
+%define _build_id_links none
 
 Name:		gitkraken
 Version:	%{version_number}
-Release:	0%{?dist}
+Release:	1%{?dist}
 Summary:	Modern GUI for git
 
 Group:		Applications/Internet
