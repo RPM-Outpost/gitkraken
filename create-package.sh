@@ -47,7 +47,7 @@ fi
 # Downloads the gitkraken zip archive.
 download_gitkraken() {
 	echo 'Downloading the latest gitkraken for linux...'
-	wget -q --show-progress "$download_url" -O "$archive_file"
+	wget $wget_progress "$download_url" -O "$archive_file"
 }
 
 manage_dir "$work_dir" 'work'

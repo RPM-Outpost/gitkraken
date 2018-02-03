@@ -11,7 +11,7 @@ Open a terminal and run `./create-package.sh <gitkraken_version>`, where `<gitkr
 - Downloads the latest version of Gitkraken from the official website
 - Creates a ready-to-use RPM package
 - Adds Gitkraken to the applications' list with a nice HD icon
-- Supports Fedora, OpenSUSE and Mageia (untested on Mageia).
+- Supports Fedora (26 & 27), OpenSUSE (Leap), CentOS (7.x) and Mageia (untested on Mageia).
 
 ## More informations
 
