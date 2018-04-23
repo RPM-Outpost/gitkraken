@@ -4,7 +4,7 @@
 
 Name:		gitkraken
 Version:	%{pkg_version}
-Release:	1%{?dist}
+Release:	2%{?dist}
 Summary:	Modern GUI for git
 
 Group:		Applications/Internet
