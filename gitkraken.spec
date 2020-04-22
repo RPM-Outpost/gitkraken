@@ -4,14 +4,14 @@
 
 Name:		gitkraken
 Version:	%{pkg_version}
-Release:	2%{?dist}
+Release:	1%{?dist}
 Summary:	Modern GUI for git
 
 Group:		Applications/Internet
 License:	Proprietary
 URL:		https://gitkraken.com/
 BuildArch:	x86_64
-Requires:   %{pkg_req}
+Requires:       %{pkg_req}
 
 %description
 Unleash your repo!
@@ -32,6 +32,6 @@ chmod +x "%{buildroot}%{install_dir}/%{exec_name}"
 %{install_dir}
 %{apps_dir}/*
 
-%post
-ln -s -f /usr/lib64/libcurl.so.4 /opt/gitkraken/libcurl-gnutls.so.4
+#%post
+#ln -s -f /usr/lib64/libcurl.so.4 /opt/gitkraken/libcurl-gnutls.so.4
 
